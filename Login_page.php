@@ -22,71 +22,130 @@ $error = '';
             justify-content: center;
             height: 100vh;
         }
-        .wrapper {
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 120px;
+            max-width: 1200px;
+        }
+        .left-section {
             text-align: center;
+        }
+        .logo {
+            margin-bottom: 60px;
+        }
+        .logo img {
+            width: 380px;
+        }
+        .app-title {
+            font-size: 38px;
             color: #333;
+            font-weight: normal;
+            line-height: 1.3;
         }
         .login-box {
-            background: #eee;
-            border-radius: 10px;
-            padding: 30px 40px;
-            display: inline-block;
-            text-align: left;
-            min-width: 300px;
+            background: #f5f5f5;
+            border: 2px solid #333;
+            border-radius: 12px;
+            padding: 50px 60px 60px 60px;
+            width: 400px;
+            box-sizing: border-box;
         }
         .login-box h2 {
-            margin-top: 0;
+            margin: 0 0 70px 0;
+            text-align: center;
+            font-size: 36px;
+            font-weight: normal;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 30px;
             text-align: center;
         }
+        .form-row {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+        }
         .login-box label {
-            display: block;
-            margin: 10px 0 4px;
+            font-size: 18px;
+            color: #333;
+            min-width: 90px;
+            text-align: left;
         }
         .login-box input[type="text"],
         .login-box input[type="password"] {
-            width: 100%;
-            padding: 6px 8px;
+            width: 190px;
+            padding: 8px 10px;
             box-sizing: border-box;
+            border: 1px solid #333;
+            font-size: 14px;
+            background: #ffffff;
+        }
+        .login-box input[type="text"]:focus,
+        .login-box input[type="password"]:focus {
+            outline: none;
+            border-color: #3b9dd8;
+            border-width: 2px;
+        }
+        .form-actions {
+            text-align: right;
+            margin-top: 50px;
         }
         .login-box input[type="submit"] {
-            margin-top: 15px;
-            padding: 8px 16px;
-            background: #0f0;
-            border: none;
+            padding: 12px 50px;
+            background: #00ff00;
+            border: 1px solid #000;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+        .login-box input[type="submit"]:hover {
+            background: #00dd00;
         }
         .error {
             color: red;
-            margin-top: 10px;
-        }
-        .logo {
-            margin-bottom: 25px;
-        }
-        .logo img {
-            max-width: 250px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="logo">
-            <!-- replace src with your actual logo file -->
-            <img src="omega_logo.png" alt="Omega Healthcare">
+    <div class="container">
+        <div class="left-section">
+            <div class="logo">
+                <img src="/image/logo.png" alt="Omega Healthcare">
+            </div>
+            <div class="app-title">
+                OMH Cebu IT<br>
+                Timetracker | OJT
+            </div>
         </div>
+        
         <div class="login-box">
             <h2>Log In</h2>
             <?php if ($error): ?>
                 <div class="error"><?= htmlspecialchars($error) ?></div>
             <?php endif; ?>
             <form method="post" action="">
-                <label for="email">Email:</label>
-                <input type="text" id="email" name="email" required>
+                <div class="form-group">
+                    <div class="form-row">
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="email" required>
+                    </div>
+                </div>
 
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+                <div class="form-group">
+                    <div class="form-row">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                </div>
 
-                <input type="submit" value="Log in">
+                <div class="form-actions">
+                    <input type="submit" value="Log in">
+                </div>
             </form>
         </div>
     </div>
