@@ -9,4 +9,5 @@ This PHP-based project is designed with a simple, minimalist architecture. It se
 
 📂 OJT-Timetracker  
 ├── 📂 `includes/`   # Core PHP logic and backend processing  
-└── 📂 `views/`      # Front-end templates and page layouts
+└── 📂 `views/`      # Front-end templates and page layouts  
+└── 📂 `images/`     # Images used in design
